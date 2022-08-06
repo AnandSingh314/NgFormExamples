@@ -3,15 +3,7 @@
 
 <div>
   <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" >
-    <label for="name-section">Name</label>
-    <section id="name-section" formGroupName="name" >
-      <label for="first-name">First Name : </label>
-      <input type="text" id="first-name" formControlName="firstName"> <br><br>
-
-      <label for="last-name">Last Name : </label>
-      <input type="text" id="last-name" formControlName="lastName"> <br><br>
-    </section>
-
+    <app-name></app-name>
     <label for="address-section">Address</label>
     <section id="address-section" formGroupName="address" >
       <label for="street">Street : </label>
