@@ -2,26 +2,16 @@
 <hr>
 
 <div>
-  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" >
-    <app-name></app-name>
-    <label for="address-section">Address</label>
-    <section id="address-section" formGroupName="address" >
-      <label for="street">Street : </label>
-      <input type="text" id="street" formControlName="street"> <br><br>
-
-      <label for="city">City : </label>
-      <input type="text" id="city" formControlName="city"> <br><br>
-
-      <label for="country">Country : </label>
-      <input type="text" id="country" formControlName="country"> <br><br>
-    </section>
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <app-name formGroupName="name"></app-name>
+    <app-address formGroupName="address"></app-address>
 
     <label for="skills">Skills</label>
     <section id="skills" formArrayName="skills">
       <ul>
         <li *ngFor="let skill of skills?.value; index as i" [formGroupName]="i">
           {{skill}}
-          &nbsp;&nbsp;&nbsp;<span (click)="removeSkill(i)" ><button>x</button></span>
+          &nbsp;&nbsp;&nbsp;<span (click)="removeSkill(i)"><button>x</button></span>
         </li>
       </ul>
       <input type="text" #newSkillInput> &nbsp;&nbsp;
@@ -29,7 +19,7 @@
     </section>
 
     <br><br>
-    <input type="submit" value="Submit" [disabled]="!profileForm.valid" >
+    <input type="submit" value="Submit" [disabled]="!profileForm.valid">
   </form>
 </div>
 <hr>

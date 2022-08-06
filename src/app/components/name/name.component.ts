@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
 import { FormGroup, FormGroupDirective } from '@angular/forms';
 
 @Component({
@@ -9,14 +9,16 @@ import { FormGroup, FormGroupDirective } from '@angular/forms';
 })
 export class NameComponent implements OnInit {
 
-  rootFormGroup !:FormGroup
+  @Input() formGroupName !: string;
+
+  form !: FormGroup;
 
   constructor(private formGroupDirective: FormGroupDirective) {
 
-   }
+  }
 
   ngOnInit(): void {
-    this.rootFormGroup = this.formGroupDirective.control;
+    this.form = this.formGroupDirective.control.get(this.formGroupName) as FormGroup;
   }
 
 }
