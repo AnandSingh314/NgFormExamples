@@ -5,19 +5,7 @@
   <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
     <app-name formGroupName="name"></app-name>
     <app-address formGroupName="address"></app-address>
-
-    <label for="skills">Skills</label>
-    <section id="skills" formArrayName="skills">
-      <ul>
-        <li *ngFor="let skill of skills?.value; index as i" [formGroupName]="i">
-          {{skill}}
-          &nbsp;&nbsp;&nbsp;<span (click)="removeSkill(i)"><button>x</button></span>
-        </li>
-      </ul>
-      <input type="text" #newSkillInput> &nbsp;&nbsp;
-      <button (click)="addNewSkill(newSkillInput.value); newSkillInput.value=''">Add Skill</button>
-    </section>
-
+    <app-skill-set formGroupName="skills"></app-skill-set>
     <br><br>
     <input type="submit" value="Submit" [disabled]="!profileForm.valid">
   </form>

@@ -12,12 +12,6 @@ export class AppComponent implements OnInit {
 
   profileForm !: FormGroup;
 
-  newSkillText = "";
-
-  get skills(): FormArray {
-    return this.profileForm.get('skills') as FormArray;
-  }
-
   constructor(private formBuilder: FormBuilder) {
   }
 
@@ -32,7 +26,7 @@ export class AppComponent implements OnInit {
         city: [''],
         country: ['', Validators.required],
       }),
-      skills: this.formBuilder.array([], [Validators.required,
+      skills: this.formBuilder.array(['Java','Angular'], [Validators.required,
                                           Validators.minLength(1),
                                           Validators.maxLength(3),
                                           UNIQUE_VALUES_ONLY])
@@ -41,14 +35,6 @@ export class AppComponent implements OnInit {
 
   onSubmit(): void {
     console.log(this.profileForm);
-  }
-
-  addNewSkill(newSkill: string): void {
-    this.skills.push(this.formBuilder.control(newSkill));
-  }
-
-  removeSkill(index: number): void {
-    this.skills.removeAt(index)
   }
 
 }

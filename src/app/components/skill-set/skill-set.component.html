@@ -1,0 +1,13 @@
+<ng-container>
+  <label for="skills">Skills</label>
+    <section id="skills">
+      <ul>
+        <li *ngFor="let skill of form?.value; index as i">
+          {{skill}}
+          &nbsp;&nbsp;&nbsp;<span (click)="removeSkill(i)"><button>x</button></span>
+        </li>
+      </ul>
+      <input type="text" #newSkillInput> &nbsp;&nbsp;
+      <button (click)="addNewSkill(newSkillInput.value); newSkillInput.value=''">Add Skill</button>
+    </section>
+</ng-container>
