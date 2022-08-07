@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
-import { FormGroup, FormGroupDirective } from '@angular/forms';
+import { ControlValueAccessor, FormGroup, FormGroupDirective } from '@angular/forms';
 
 @Component({
   selector: 'app-name',

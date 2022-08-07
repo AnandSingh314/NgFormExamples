@@ -53,3 +53,5 @@ const UNIQUE_VALUES_ONLY = (control: FormControl): ValidationErrors | null => {
 
 // skills controls: https://netbasal.com/angular-reactive-forms-the-ultimate-guide-to-formarray-3adbe6b0b61a
 // custom validator: https://codecraft.tv/courses/angular/advanced-topics/basic-custom-validators/
+// Splitting angular reactive form into multiple small components : https://youtu.be/2DOkiQFB5ic
+// custome form control input component : https://youtu.be/WGU-DnhpsA0

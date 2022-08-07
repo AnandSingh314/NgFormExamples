@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { NameComponent } from './components/name/name.component';
 import { AddressComponent } from './components/address/address.component';
 import { SkillSetComponent } from './components/skill-set/skill-set.component';
+import { CustomInputComponent } from './components/custom-input/custom-input.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NameComponent,
     AddressComponent,
-    SkillSetComponent
+    SkillSetComponent,
+    CustomInputComponent
   ],
   imports: [
     BrowserModule,
