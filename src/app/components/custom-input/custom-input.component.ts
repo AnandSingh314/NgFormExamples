@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
+let idCounter = 1;
 @Component({
   selector: 'app-custom-input',
   templateUrl: './custom-input.component.html',
@@ -10,11 +11,16 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
     provide: NG_VALUE_ACCESSOR,
     useExisting: CustomInputComponent,
     multi: true
-  }]
+  }],
+  host: {
+    "id": "id"
+  }
 })
 export class CustomInputComponent implements OnInit, ControlValueAccessor {
 
   @Input() label !: string;
+
+  id : string = ""+idCounter++;
 
   value !: string;
 

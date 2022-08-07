@@ -1,2 +1,2 @@
-<label for="first-name">{{label}}</label>
-<input type="text" id="first-name" [ngModel]="value" (ngModelChange)="onValueChange($event)" (blur)="onTouched()">
+<label for="customer-input-{{id}}">{{label}}</label>
+<input type="text" id="customer-input-{{id}}" [ngModel]="value" (ngModelChange)="onValueChange($event)" (blur)="onTouched()">

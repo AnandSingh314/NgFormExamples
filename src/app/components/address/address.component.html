@@ -1,13 +1,8 @@
 <ng-container [formGroup]="form">
   <label for="address-section">Address</label>
   <section id="address-section">
-    <label for="street">Street : </label>
-    <input type="text" id="street" formControlName="street"> <br><br>
-
-    <label for="city">City : </label>
-    <input type="text" id="city" formControlName="city"> <br><br>
-
-    <label for="country">Country : </label>
-    <input type="text" id="country" formControlName="country"> <br><br>
+    <app-custom-input label="Street : " formControlName="street" ></app-custom-input> <br><br>
+    <app-custom-input label="City : " formControlName="city" ></app-custom-input> <br><br>
+    <app-custom-input label="Country : " formControlName="country" ></app-custom-input> <br><br>
   </section>
 </ng-container>
